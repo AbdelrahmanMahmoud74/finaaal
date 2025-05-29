@@ -6,11 +6,13 @@ RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 # إنشاء مجلد المشروع
 WORKDIR /app
 
-# نسخ ملفات المشروع
-COPY . .
+# نسخ فقط ملفات البايثون المطلوبة
+COPY main.py .
+COPY utils/ ./utils
+COPY requirements.txt .
 
-# تثبيت Ultralytics و FastAPI و باقي المتطلبات
-RUN pip install --no-cache-dir fastapi uvicorn ultralytics python-multipart
+# تثبيت المتطلبات
+RUN pip install --no-cache-dir -r requirements.txt
 
 # إنشاء مجلد للرفع
 RUN mkdir -p uploads
