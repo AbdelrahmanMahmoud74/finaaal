@@ -1,5 +1,6 @@
 ultralytics
 flask
 python-dotenv
+python-multipart
 requests
 opencv-python
