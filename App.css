@@ -1,0 +1,658 @@
+/* Fantasy Background Variables */
+:root {
+  --deep-space: #0a1929;
+  --mystical-blue: #1a4a8c;
+  --eco-green: #00ff9d;
+  --soft-teal: #40c9a2;
+  --aurora-blue: #4a90e2;
+  --ethereal-white: rgba(255, 255, 255, 0.1);
+  --magic-glow: rgba(0, 255, 157, 0.2);
+  --island-glow: rgba(74, 144, 226, 0.3);
+  --forest-glow: rgba(64, 201, 162, 0.4);
+  --machine-glow: rgba(0, 255, 157, 0.15);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--deep-space);
+  color: #ffffff;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Gradient Layer */
+.gradient-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 25, 41, 0.95) 0%,
+    rgba(0, 102, 204, 0.3) 50%,
+    rgba(10, 25, 41, 0.95) 100%
+  );
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Particles Layer */
+.particles-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at center, #00ff9d 0%, transparent 1%),
+    radial-gradient(circle at center, #0066cc 0%, transparent 1%);
+  background-size: 100px 100px, 120px 120px;
+  background-position: 0 0;
+  opacity: 0.3;
+  animation: particlesFloat 20s linear infinite;
+}
+
+/* Waves Layer */
+.waves-layer {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 255, 157, 0.1) 25%,
+    rgba(0, 102, 204, 0.2) 50%,
+    rgba(0, 255, 157, 0.1) 75%,
+    transparent 100%
+  );
+  animation: waveFlow 15s linear infinite;
+}
+
+/* Glow Layer */
+.glow-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0, 255, 157, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(0, 102, 204, 0.1) 0%, transparent 50%);
+  animation: glowPulse 8s ease-in-out infinite alternate;
+}
+
+/* Background Animations */
+@keyframes gradientShift {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes particlesFloat {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+@keyframes waveFlow {
+  0% {
+    transform: translateX(-50%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(0%) skewX(-15deg);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Fantasy Background */
+.fantasy-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Base Landscape */
+.base-landscape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 150%, var(--mystical-blue) 0%, transparent 60%),
+    radial-gradient(circle at 20% 50%, var(--magic-glow) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, var(--island-glow) 0%, transparent 50%);
+  filter: blur(60px);
+  animation: landscapeShift 20s ease infinite;
+}
+
+/* Floating Islands */
+.floating-islands {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.island-primary {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+  background: radial-gradient(ellipse at center,
+    var(--island-glow) 0%,
+    transparent 70%);
+  filter: blur(20px);
+  transform-origin: center center;
+  animation: floatMain 15s ease-in-out infinite;
+}
+
+.island-secondary {
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  width: 200px;
+  height: 150px;
+  background: radial-gradient(ellipse at center,
+    var(--forest-glow) 0%,
+    transparent 70%);
+  filter: blur(15px);
+  animation: floatSecondary 18s ease-in-out infinite;
+}
+
+.island-tertiary {
+  position: absolute;
+  top: 35%;
+  left: 75%;
+  width: 250px;
+  height: 180px;
+  background: radial-gradient(ellipse at center,
+    var(--magic-glow) 0%,
+    transparent 70%);
+  filter: blur(18px);
+  animation: floatTertiary 20s ease-in-out infinite;
+}
+
+/* Glowing Forest */
+.forest-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.tree-cluster-1 {
+  position: absolute;
+  bottom: 20%;
+  left: 15%;
+  width: 200px;
+  height: 300px;
+  background: radial-gradient(ellipse at bottom,
+    var(--eco-green) 0%,
+    transparent 70%);
+  filter: blur(15px);
+  animation: treeGlow 8s ease-in-out infinite;
+}
+
+.tree-cluster-2 {
+  position: absolute;
+  bottom: 15%;
+  left: 45%;
+  width: 250px;
+  height: 350px;
+  background: radial-gradient(ellipse at bottom,
+    var(--soft-teal) 0%,
+    transparent 70%);
+  filter: blur(20px);
+  animation: treeGlow 10s ease-in-out infinite reverse;
+}
+
+.tree-cluster-3 {
+  position: absolute;
+  bottom: 18%;
+  left: 75%;
+  width: 220px;
+  height: 320px;
+  background: radial-gradient(ellipse at bottom,
+    var(--forest-glow) 0%,
+    transparent 70%);
+  filter: blur(18px);
+  animation: treeGlow 9s ease-in-out infinite;
+}
+
+/* Eco Machines */
+.machine-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.recycling-unit-1 {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  width: 150px;
+  height: 150px;
+  background: 
+    radial-gradient(circle at center,
+      var(--machine-glow) 0%,
+      transparent 70%),
+    repeating-linear-gradient(45deg,
+      transparent 0%,
+      transparent 48%,
+      var(--eco-green) 49%,
+      transparent 51%);
+  background-size: 100% 100%, 20px 20px;
+  filter: blur(5px);
+  animation: machineOperate 10s linear infinite;
+}
+
+.recycling-unit-2 {
+  position: absolute;
+  top: 55%;
+  left: 70%;
+  width: 180px;
+  height: 180px;
+  background: 
+    radial-gradient(circle at center,
+      var(--machine-glow) 0%,
+      transparent 70%),
+    repeating-linear-gradient(-45deg,
+      transparent 0%,
+      transparent 48%,
+      var(--aurora-blue) 49%,
+      transparent 51%);
+  background-size: 100% 100%, 25px 25px;
+  filter: blur(6px);
+  animation: machineOperate 12s linear infinite reverse;
+}
+
+.energy-flows {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--magic-glow) 25%,
+    var(--island-glow) 50%,
+    var(--magic-glow) 75%,
+    transparent 100%);
+  filter: blur(20px);
+  transform-origin: center center;
+  animation: energyFlow 15s linear infinite;
+}
+
+/* Atmosphere Effects */
+.atmosphere-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.aurora-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+    var(--magic-glow) 0%,
+    transparent 100%);
+  filter: blur(50px);
+  animation: auroraShift 15s ease infinite;
+}
+
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at center,
+      var(--eco-green) 0%,
+      transparent 1%),
+    radial-gradient(circle at center,
+      var(--aurora-blue) 0%,
+      transparent 1%);
+  background-size: 120px 120px, 80px 80px;
+  opacity: 0.3;
+  animation: particleDrift 20s linear infinite;
+}
+
+.light-rays {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(45deg,
+      transparent 0%,
+      transparent 48%,
+      var(--ethereal-white) 49%,
+      transparent 51%) 0 0 / 100px 100px;
+  opacity: 0.1;
+  filter: blur(3px);
+  animation: rayShift 10s linear infinite;
+}
+
+/* Background Animations */
+@keyframes landscapeShift {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes floatMain {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, -30px); }
+}
+
+@keyframes floatSecondary {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, -20px) scale(1.1); }
+}
+
+@keyframes floatTertiary {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, -15px) scale(0.9); }
+}
+
+@keyframes treeGlow {
+  0%, 100% { opacity: 0.6; filter: blur(15px) brightness(1); }
+  50% { opacity: 0.8; filter: blur(15px) brightness(1.3); }
+}
+
+@keyframes machineOperate {
+  0% { background-position: 0 0; opacity: 0.5; }
+  50% { opacity: 0.7; }
+  100% { background-position: 20px 20px; opacity: 0.5; }
+}
+
+@keyframes energyFlow {
+  0% { transform: translateX(-50%) skewX(-15deg); }
+  100% { transform: translateX(0%) skewX(-15deg); }
+}
+
+@keyframes auroraShift {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 0.5; transform: translateY(-20px); }
+}
+
+@keyframes particleDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+@keyframes rayShift {
+  0% { background-position: 0 0; opacity: 0.1; }
+  50% { opacity: 0.2; }
+  100% { background-position: 100px 100px; opacity: 0.1; }
+}
+
+/* Main Container */
+.app-wrapper {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 2px dashed #40c9a2;
+  position: relative;
+  z-index: 2;
+}
+
+.file-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.file-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  width: 0;
+}
+
+.file-input::before {
+  content: '📸 Choose Image';
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #40c9a2;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Preview Section */
+.preview-section {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.preview-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Button Styles */
+.submit-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #40c9a2;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
+  margin-top: 1rem;
+  width: auto;
+  min-width: 200px;
+}
+
+.submit-button:hover {
+  background: #2ea88a;
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Error Message */
+.error-message {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-wrapper {
+    padding: 1rem;
+  }
+
+  .main-container {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .upload-section {
+    padding: 1rem;
+  }
+
+  .submit-button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .preview-section {
+    grid-template-columns: 1fr;
+  }
+}
